@@ -1,19 +1,56 @@
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
 *{
     padding: 0;
     margin: 0;
 }
-nav{
-    background-color: black;
-    height: 50px;
-    width: 100vw;
+header{
+    background-image: linear-gradient(180deg, #000001e6 10%, #0000);
     display: flex;
     justify-content: center;
-    padding-top: 25px;
+}
+nav{
+    
+    font-family: 'Amazon Ember', sans-serif;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    align-items: center;
+    height: 70px;
+    width: 100vw;
+    display: flex;
+    /* justify-content: center; */
+
     
 }
-ul li{
-
-    color: white;
+.navbar-links{
+    font-weight: 500px;
+    font-size: 16px;
+    display: flex;
     list-style: none;
+    gap: 50px;
+    color: white;
     display: inline
+    
+}
+
+nav img{
+    height: 25px;
+    width: 130px;
+    padding-left: 30px;
+    justify-content: left;
+    padding-top: 2px;
+    padding-right: 50px;
+    cursor: pointer;
+}
+.account{
+    top: 13px;
+    left: 1400px;
+    position: fixed;
+    display: flex;
+    justify-items: center;
+}
+.account1 {
+    right: 10px;
+    display: flex;
+    height: 40px;
+    cursor: pointer;
 }
