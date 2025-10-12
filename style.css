@@ -2,13 +2,22 @@
 *{
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
-header{
-    background-image: linear-gradient(180deg, #000001e6 10%, #0000);
-    display: flex;
-    justify-content: center;
+
+header {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* ensures nav is above video */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
 }
 nav{
+    background-color: black;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
     font-family: 'Amazon Ember', sans-serif;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -16,11 +25,51 @@ nav{
     height: 70px;
     width: 100%;
     display: flex;
-    /* justify-content: center; */
-
-    
+    /* justify-content: center; */ 
 }
+
+
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 90vh; /* video height */
+  overflow: hidden;
+}
+
+.video-section video {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures video covers section */
+  z-index: 1;
+}
+
+.video-overlay {
+    font-size:20px;
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-family: 'Amazon Ember', sans-serif;
+  text-align: left;
+  padding: 120px 80px; /* increased top padding to avoid overlapping nav text */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.85) 20%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0.2)90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 .navbar-links{
+    transition: background-color .3s ease;
+    list-style: none;
     font-weight: 500px;
     font-size: 16px;
     display: flex;
@@ -34,21 +83,38 @@ nav{
 nav img{
     height: 25px;
     width: 130px;
-    padding-left: 30px;
+    padding-left: 70px;
     justify-content: left;
     padding-top: 2px;
     padding-right: 50px;
     cursor: pointer;
 }
-.account{
-    top: 13px;
-    left: 1400px;
-    position: fixed;
-    display: flex;
+.nav-right{
+    top: 13px; 
+    left: 1200px; 
+    position: fixed; 
+    display: flex; 
     justify-items: center;
 }
+.res{
+    padding-top: 4px;
+}
+.res button{
+    height: 35px;
+    width: 100px;
+    background-color: #3B82F6;
+    color: white;
+    margin-right: 10px;
+}
+.res button :hover{
+  background-color: #2563eb;
+}
+.account1 img{
+    height: 30px;
+    margin-right: 30px;
+    margin-top: 5px;
+}
 .account1 {
-    right: 10px;
     display: flex;
     height: 40px;
     cursor: pointer;
@@ -67,17 +133,51 @@ nav img{
 p{
    padding: 10px 0 10px 0;
 }
-button{
-    height: 50px;
-    width: 150px;
-    border-radius: 10px;
-    border: none;
-
+button {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Amazon Ember', sans-serif !important; /* ✅ force font family */
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
 }
-.button1{
-    background-color: rgb(37, 37, 248);
+
+.button1 {
+  background-color: #3B82F6;
+  color: white;
+  margin-right: 10px;
+}
+
+.button1:hover {
+  background-color: #2563eb;
+  /* transform: scale(1.05); */
+}
+
+.button2 {
+  background-color: #35383d;
+  color: white;
+}
+
+.card1, .card2 {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.card1::-webkit-scrollbar,
+.card2::-webkit-scrollbar {
+  display: none;
+}
+.card-section{
+    background-color: black;
+    padding-left: 65px;
 }
 h2{
+    font-family: 'Amazon Ember', sans-serif !important;
+    color: white;
     padding-top: 50px;
 }
 .card1{
@@ -88,23 +188,45 @@ h2{
 .card2{
     display: flex;
     gap: 20px;
+    padding-bottom: 40px;
 
 }
 .top{
     padding-bottom: 20px;
 }
 .pick-card{
-    border: 2px solid black;
-    border-radius: 5px;
+    border: 2px solid rgb(253, 253, 253);
+    border-radius: 8px;
     flex: 0 0 auto;
-    min-width: 320px;
-    min-height: 150px;
+    min-width: 280px;
+    min-height: 170px;
     overflow: hidden;
     position: relative;
 }
-.footer{
-    padding-top: 10px ;
-    border: 2px solid black;
-    width: 100vw;
-    
+.footer {
+  height: 100px;
+  padding-top: 10px;
+  border-top: 2px solid #111;
+  width: 100%;
+  background-color: #3B82F6;
 }
+
+.footer p {
+  text-align: center;
+  font-family: 'Amazon Ember', sans-serif;
+}
+.foot-menu p{
+    list-style: none;
+    display: inline;
+}
+.image img{
+    padding-top: 10px;
+    height: 30px;
+    display: flex;
+    position: relative;
+    justify-self: center;
+
+}
+
+
+
