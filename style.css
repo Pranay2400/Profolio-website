@@ -2,7 +2,7 @@
 *{
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 header {
@@ -24,8 +24,17 @@ nav{
     align-items: center;
     height: 70px;
     width: 100%;
-    display: flex;
-    /* justify-content: center; */ 
+    cursor: pointer;
+    background: transparent;
+    backdrop-filter: none;
+    transition: all 0.3s ease-in-out; 
+    z-index: 1000;
+}
+
+nav.scrolled {
+  backdrop-filter: blur(16px);
+  background-color: rgba(25, 30, 37, .8);
+  border-radius: 0 0 12px 12px;
 }
 
 
@@ -76,8 +85,12 @@ nav{
     list-style: none;
     gap: 50px;
     color: white;
-    display: inline
-    
+    display: inline;
+    transition: color 0.3s ease, transform 0.2s ease; 
+}
+.navbar-links li:hover {
+    color: #3B82F6;
+    transform: scale(1.1);
 }
 
 nav img{
@@ -104,12 +117,13 @@ nav img{
     width: 100px;
     background-color: #3B82F6;
     color: white;
-    margin-right: 10px;
+   
 }
-.res button :hover{
-  background-color: #2563eb;
+.res button:hover{
+  background-color: #0238ad;
 }
 .account1 img{
+    width: 30px;
     height: 30px;
     margin-right: 30px;
     margin-top: 5px;
@@ -151,22 +165,35 @@ button {
 }
 
 .button1:hover {
-  background-color: #2563eb;
-  /* transform: scale(1.05); */
+  background-color: #0238ad;
+
 }
 
 .button2 {
   background-color: #35383d;
   color: white;
 }
+.button2:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
 
 .card1, .card2 {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: auto; /* horizontal scroll */
+  overflow-y: visible; /* allow popup expansion upward */
   scroll-behavior: smooth;
+  padding: 40px 0; /* gives extra breathing room */
+  height: auto; /* prevent hard clipping */
 }
 
+.card1::-webkit-scrollbar,
+.card2::-webkit-scrollbar {
+  height: 6px;
+}
 .card1::-webkit-scrollbar,
 .card2::-webkit-scrollbar {
   display: none;
@@ -175,6 +202,7 @@ button {
     background-color: black;
     padding-left: 65px;
 }
+
 h2{
     font-family: 'Amazon Ember', sans-serif !important;
     color: white;
@@ -194,34 +222,51 @@ h2{
 .top{
     padding-bottom: 20px;
 }
-.pick-card{
-    border: 2px solid rgb(253, 253, 253);
-    border-radius: 8px;
-    flex: 0 0 auto;
-    min-width: 280px;
-    min-height: 170px;
-    overflow: hidden;
-    position: relative;
+.pick-card {
+  width: 280px;
+  height: 170px;
+  border-radius: 12px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  transform-origin: center; 
+}
+
+.pick-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pick-card:hover {
+  transform: scale(1.25);
+  z-index: 1005;
+  box-shadow: 0px 24px 60px rgba(0,0,0,0.75);
+  filter: brightness(1.05) contrast(1.1);
+}
+
+.card1:hover .pick-card:not(:hover),
+.card2:hover .pick-card:not(:hover) {
+  filter: brightness(0.65); /* cinemascope effect */
+}
+
+.pick-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .footer {
-  height: 100px;
-  padding-top: 10px;
+  height: 70px;
+  padding-top: 2px;
   border-top: 2px solid #111;
   width: 100%;
   background-color: #3B82F6;
 }
 
-.footer p {
-  text-align: center;
-  font-family: 'Amazon Ember', sans-serif;
-}
-.foot-menu p{
-    list-style: none;
-    display: inline;
-}
 .image img{
-    padding-top: 10px;
-    height: 30px;
+    height: 60px;
     display: flex;
     position: relative;
     justify-self: center;
