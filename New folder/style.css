@@ -1,0 +1,24 @@
+body, html {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 450px;
+}
+
+#amazon-smile {
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#amazon-smile:hover {
+  transform: scale(1.1); /* Subtle "pop" on hover */
+  cursor: pointer;
+}
