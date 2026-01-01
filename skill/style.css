@@ -1,0 +1,237 @@
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+*{
+    padding: 0;
+    margin: 0;
+    /* overflow-x: hidden; */
+}
+body{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+header {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* ensures nav is above video */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+}
+nav{
+    background-color: black;
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    font-family: 'Amazon Ember', sans-serif;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    cursor: pointer;
+    background: transparent;
+    backdrop-filter: none;
+    transition: all 0.3s ease-in-out; 
+    z-index: 1000;
+}
+
+nav.scrolled {
+  backdrop-filter: blur(16px);
+  border-radius: 0 0 12px 12px;
+}
+.navbar-links{
+    transition: background-color .3s ease;
+    list-style: none;
+    font-weight: 500px;
+    font-size: 16px;
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    color: white;
+    display: inline;
+    transition: color 0.3s ease, transform 0.2s ease; 
+}
+.navbar-links li:hover {
+    color: #3B82F6;
+    transform: scale(1.1);
+}
+
+nav img{
+    height: 25px;
+    width: 130px;
+    padding-left: 70px;
+    justify-content: left;
+    padding-top: 2px;
+    padding-right: 50px;
+    cursor: pointer;
+}
+.nav-right{
+    top: 13px; 
+    left: 1200px; 
+    position: fixed; 
+    display: flex; 
+    justify-items: center;
+}
+.res{
+    padding-top: 4px;
+}
+.res button{
+    height: 35px;
+    width: 100px;
+    background-color: #3B82F6;
+    color: white;
+   
+}
+.res button:hover{
+  background-color: #0238ad;
+}
+.account1 img{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.account1 {
+    display: flex;
+    height: 40px;
+    cursor: pointer;
+}
+button {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Amazon Ember', sans-serif !important; /* ✅ force font family */
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+.invert{
+    filter: invert(1);
+}
+.hambargar img{
+  width: 0px;
+  padding: 0px;
+}
+.box{
+    border-radius: 10px;
+    margin-top:70px ;
+    padding: 20px 0 0 20px;
+    position: fixed;
+    height: 140px;
+    width: 100px;
+    background: transparent;
+    backdrop-filter: none;
+}
+.inbox li{
+    padding: 5px 0 5px 0;
+    list-style: none;
+    cursor: pointer;
+}
+@media (max-width: 1025px) {
+    nav img{
+        padding-left: 20px;
+    }
+    .video-overlay {
+        padding-left: 20px;
+    }
+    .card-section{
+        padding-left: 12px;
+    }
+    .nav-right {
+        left: 815px;
+    }
+}
+
+@media (max-width: 780px) {
+      .nav-right {
+        left: 580px;
+    }
+    h1{
+      font-size: 30px;
+    }
+    p{
+      font-size: 16px;
+    }
+}
+@media (max-width: 766px){
+    .navbar-links{
+      opacity: 0;
+      visibility: hidden;
+      width: 0px;
+    }
+    .nav-right {
+        left: 420px;
+    }
+    .hambargar img{
+      width: 30px;
+      color: ivory;
+      padding-left: 10px;
+    }
+}
+@media (max-width: 426px){
+      .nav-right {
+        left: 235px;
+    }
+    .video-overlay{
+      padding-top: 100px;
+    }
+}
+@media (max-width: 376px){
+      .nav-right {
+        left: 200px;
+    }
+    nav img {
+      padding-left: 25px;
+    }
+    
+    h1 {
+      font-size: 23px;
+    }
+    p {
+        font-size: 12px;
+    }
+    h2{
+      font-size: 18px;
+    }
+    .overlay-buttons{
+      display: flex;
+   }
+}
+@media (max-width: 321px){
+    .nav-right {
+      left: 165px;
+    }
+    .account1 img {
+      width: 25px;
+      height: 25px;
+      margin-top: 7px;
+      padding-left: 35px;
+      padding-right: 8px;
+    }
+    .res button {
+      height: 30px;
+      width: 77px;
+    }
+    .res {
+      padding-top: 6px;
+    }
+    
+    nav img {
+      padding-left: 5px;
+    }
+    h1 {
+      font-size: 23px;
+    }
+    p {
+        font-size: 12px;
+    }
+    h2{
+      font-size: 18px;
+    }
+    .video-section {
+      height: 85vh;
+    }
+    .overlay-buttons{
+      display: flex;
+   }
+}    

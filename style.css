@@ -37,7 +37,10 @@ nav.scrolled {
   border-radius: 0 0 12px 12px;
 }
 
-
+.hambargar img{
+  width: 0px;
+  padding: 0px;
+}
 .video-section {
   position: relative;
   width: 100%;
@@ -87,6 +90,7 @@ nav.scrolled {
     color: white;
     display: inline;
     transition: color 0.3s ease, transform 0.2s ease; 
+    
 }
 .navbar-links li:hover {
     color: #3B82F6;
@@ -145,6 +149,22 @@ nav img{
     font-family: 'Amazon Ember', sans-serif;
     font-size: 20px;
 }
+.fade-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    animation: slideFadeLeft 1s ease forwards;
+}
+@keyframes slideFadeLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+
+
 p{
    padding: 10px 0 10px 0;
 }
@@ -273,6 +293,9 @@ h2{
     justify-self: center;
 
 }
+.invert{
+    filter: invert(1);
+}
 @media (max-width: 1025px) {
     nav img{
         padding-left: 20px;
@@ -308,16 +331,18 @@ h2{
     .nav-right {
         left: 420px;
     }
-    /* nav img {
-        justify-items: center;
-    } */
-    /* nav img{
-          padding-left: 10px;
-    } */
+    .hambargar img{
+      width: 30px;
+      color: ivory;
+      padding-left: 10px;
+    }
 }
 @media (max-width: 426px){
       .nav-right {
         left: 235px;
+    }
+    .video-overlay{
+      padding-top: 100px;
     }
 }
 @media (max-width: 376px){
@@ -325,8 +350,9 @@ h2{
         left: 200px;
     }
     nav img {
-      padding-left: 54px;
+      padding-left: 25px;
     }
+    
     h1 {
       font-size: 23px;
     }
@@ -358,8 +384,9 @@ h2{
     .res {
       padding-top: 6px;
     }
+    
     nav img {
-      padding-left: 54px;
+      padding-left: 5px;
     }
     h1 {
       font-size: 23px;
